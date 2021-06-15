@@ -6,13 +6,17 @@ minsEl: document.querySelector('[ data-value="mins"]'),
 secEl: document.querySelector('[data-value="secs"]')
 };
 console.log(refs.timerEl);
+console.log(refs.daysEl);
+console.log(refs.hoursEl);
+console.log(refs.minsEl);
+console.log(refs.secEl);
 
  class CountdownTimer {
   constructor ({onTick}) {
     this.intervalId = null;
     this.onTick = onTick;
 
-    this.init();
+    this.init();   
   }
   init() {
     const time = this.getTimeComponents(0);
@@ -20,7 +24,8 @@ console.log(refs.timerEl);
   }
 
 start() {
-    const startTime = Date.now();    
+    const startTime = Date.now(); 
+
     this.intervalId = setInterval(() => {
       const currentTime = Date.now();
       const deltaTime = currentTime - startTime;
@@ -29,7 +34,7 @@ start() {
       this.onTick(time);
     }, 1000); 
   }
-  // start();
+  
 
   stop() {
     clearInterval(this.intervalId);
@@ -51,12 +56,14 @@ start() {
     }    
 };
 
-new CountdownTimer({
+const timer = new CountdownTimer({
   onTick: updateClockface,
   selector: '#timer-1',
   targetDate: new Date('Jul 17, 2019'),
 });
+console.log(timer);
 
 function updateClockface({ days, hours, mins, secs }) {
-  //console.log(`${days}:${hours}:${mins}:${secs}`); 
+  console.log(`${days}:${hours}:${mins}:${secs}`); 
+  return `${days}:${hours}:${mins}:${secs}`;
 }
