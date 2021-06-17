@@ -1,0 +1,34 @@
+.title {
+  color: grey;
+  font-weight:bold;
+  font-style: italic;
+}
+
+.timer{
+  display: flex;
+}
+
+.field {
+flex-wrap: wrap;
+align-items: center;
+text-align: center;
+border: 3px solid #000;
+background-color: aquamarine;
+width: 80px;
+height: 80px;
+margin: 10px 5px;
+}
+
+.value {  
+  margin-right: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(20, 49, 163);
+}
+
+.label {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: oblique;
+  color: cornflowerblue;
+}
